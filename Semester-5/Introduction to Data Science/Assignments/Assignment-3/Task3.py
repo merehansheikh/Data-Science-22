@@ -32,7 +32,6 @@ def log_exceptions(func):
             print(f"Exception occurred in {func.__name__}:")
             print(f"Type: {type(e).__name__}")
             print(f"Message: {str(e)}")
-            traceback.print_exc()
 
     return wrapper
 
