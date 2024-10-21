@@ -1,0 +1,5 @@
+print('|H|\t |H|\t|E||E||E||E|\t|L|\t\t|L|\t\t|O||O||O||O||O|')
+print('|H|\t |H|\t|E|         \t|L|\t\t|L|\t\t|O|         |O|')
+print('|H|\t |H|\t|E|         \t|L|\t\t|L|\t\t|O|         |O|')
+print('|H|\t |H|\t|E|         \t|L|\t\t|L|\t\t|O|         |O|')
+print('|H||H||H||H|\t|E||E||E|\')
