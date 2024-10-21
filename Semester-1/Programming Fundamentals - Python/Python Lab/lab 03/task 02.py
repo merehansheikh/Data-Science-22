@@ -1,0 +1,7 @@
+d=int(input('Enter amount deposited in bank:'))
+i1=d+(0.1*d)
+i2=i1+(0.1*i1)
+i3=i2+(0.1*i2)
+print('Amount after one year:', i1)
+print('Amount after two years:', i2)
+print('Amount after three years:', i3)

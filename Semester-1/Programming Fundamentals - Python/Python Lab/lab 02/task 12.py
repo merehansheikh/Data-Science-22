@@ -1,0 +1,10 @@
+print ('|H|         |H|\t|E||E||E||E|\t|L|\t\t|L|\t\t|O||O||O||O||o||O|')
+print ('|H|         |H|\t|E|\t\t|L|\t\t|L|\t\t|O|\t       |O|')
+print ('|H|         |H|\t|E|\t\t|L|\t\t|L|\t\t|O|\t       |O|')
+print ('|H|         |H|\t|E|\t\t|L|\t\t|L|\t\t|O|\t       |O|')
+print ('|H||H||H||H||H|\t|E||E||E|\t|L|\t\t|L|\t\t|O|\t       |O|')
+print ('|H|         |H|\t|E|\t\t|L|\t\t|L|\t\t|O|\t       |O|')
+print ('|H|         |H|\t|E|\t\t|L|\t\t|L|\t\t|O|\t       |O|')
+print ('|H|         |H|\t|E|\t\t|L|\t\t|L|\t\t|O|\t       |O|')
+print ('|H|         |H|\t|E||E||E||E|\t|L||L||L||L|\t|L||L||L||L|\t|O||O||O||O||o||O|')
+
