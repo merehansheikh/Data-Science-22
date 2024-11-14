@@ -10,3 +10,10 @@
 #### English 
 6. [Exploring Writing Paragraphs and Essays by Albright Langan - 4th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-1/English%20Composition%20and%20Comprehension/Textbooks/Exploring-Writing-Paragraphs-and-Essays-4th-Albright-Langan.pdf)
 7. [College Writing Skills by Albright Langan - 10th Edition (Instructor's Manual)](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-1/English%20Composition%20and%20Comprehension/Textbooks/college-writing-skills-with-readings-10th-langan-albright-instructor-edition.pdf)
+8. [The Cambridge Introduction to Narrative by H. Porter Abbott](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-1/English%20Composition%20and%20Comprehension/Textbooks/h-porter-abbott-the-cambridge-introduction-to-narrative-2002.pdf)
+9. [Bussiness Communication Today by Courtland L. Bovée and John V. Thill - 14th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-2/Communication%20and%20Presentation%20Skills/Textbooks/Bussiness%20Communication%20Today%20by%20Courtland%20L.%20Bov%C3%A9e%20and%20John%20V.%20Thill%20-%2014th%20Edition.pdf)
+#### Digital Logic Design
+10. [Digital Design Global Edition by Michael D. Ciletti and M. Morris Mano- 6th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-2/Digital%20Logic%20Design/Textbooks/Digital%20Design%20Global%20Edition%20by%20Michael%20D.%20Ciletti%20and%20M.%20Morris%20Mano-%206th%20Edition.pdf)
+11. [The Elements of Computing Systems by Noam Nisan and Shimon Shocken](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-2/Digital%20Logic%20Design/Textbooks/The%20Elements%20of%20Computing%20Systems%20by%20Noam%20Nisan%20and%20Shimon%20Shocken.pdf)
+#### Programming
+12. [Starting Out with Python by Tony Gaddis - 5th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-1/Programming%20Fundamentals%20-%20Python/Starting%20Out%20with%20Python%2C%205th%20Edition.pdf)
