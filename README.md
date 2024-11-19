@@ -18,3 +18,4 @@
 #### Programming
 12. [Starting Out with Python by Tony Gaddis - 5th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-1/Programming%20Fundamentals%20-%20Python/Starting%20Out%20with%20Python%2C%205th%20Edition.pdf)
 13. [Python 3 Object-oriented Programming by Dusty Phillips - 2nd Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-2/Object%20Oriented%20Programming%20-%20Python/Textbooks/Python%203%20Object-oriented%20Programming%2C%202nd%20Edition.pdf)
+14. [Automate the Boring Stuff with Python by Al Sweigart](https://github.com/merehansheikh/Data-Science-22/blob/main/Automate%20the%20Boring%20Stuff%20with%20Python.pdf)
