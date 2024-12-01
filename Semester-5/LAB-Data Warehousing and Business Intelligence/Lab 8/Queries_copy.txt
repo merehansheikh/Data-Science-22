@@ -1,0 +1,67 @@
+Task 1
+
+1.
+CREATE TABLE SourceStudent (
+    StudentID VARCHAR(10) PRIMARY KEY,
+    StudentName VARCHAR(100)
+);
+
+2.
+INSERT INTO SourceStudent (StudentID, StudentName)
+VALUES
+    ('S1', 'Khurram Shahzad'),
+    ('S2', 'Arif Butt'),
+    ('S3', 'Faisal Bukhari');
+    
+3.
+CREATE TABLE DestinationStudent (
+    StudentID VARCHAR(20) PRIMARY KEY,
+    StudentName VARCHAR(20)
+);
+
+Task 2
+
+1. 
+CREATE TABLE Student1 (
+    Student_ID INT PRIMARY KEY,
+    Firstname VARCHAR(50),
+    Middlename VARCHAR(50),
+    Lastname VARCHAR(50),
+    Email VARCHAR(100)
+);
+
+2. 
+INSERT INTO Student1 (Student_ID, FirstName, MiddleName, LastName, Email)
+VALUES
+('1', 'Muhammad', 'Khurram', 'Shahzad', 'khurram@gmail.com'),
+('2', 'Muhammad', 'Arif', 'Butt', 'arif@gmail.com'),
+('3', 'Faisal', NULL, 'Bukhari', 'faisal@gmail.com');
+
+3. 
+CREATE TABLE DWStudent (
+    Student_ID INT PRIMARY KEY,
+    StudentName VARCHAR(150)
+);
+
+Task 3
+
+1.
+CREATE TABLE Student2 (
+    Student_ID INT PRIMARY KEY,
+    Grade_Code VARCHAR(10),
+    Program_Code VARCHAR(10)
+);
+
+2.
+INSERT INTO Student2 (Student_ID, Grade_Code, Program_Code)
+VALUES
+(1, 'A', 'CS'),
+(2, 'B', 'SE'),
+(3, 'C', 'DS');
+
+3.
+CREATE TABLE DWStudent2 (
+    Student_ID INT PRIMARY KEY,
+    Grade VARCHAR(50),
+    Program VARCHAR(50)
+);
