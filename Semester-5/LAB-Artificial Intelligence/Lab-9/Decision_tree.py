@@ -4,17 +4,6 @@ import pandas as pd
 import math
 
 def calculate_entropy(data, target_col):
-  """
-  Calculates the entropy of a given dataset.
-
-  Args:
-    data: The dataset as a pandas DataFrame.
-    target_col: The name of the target column.
-
-  Returns:
-    The entropy of the dataset.
-  """
-
   # Count the occurrences of each class in the target column
   class_counts = data[target_col].value_counts()
 
@@ -28,18 +17,6 @@ def calculate_entropy(data, target_col):
   return entropy
 
 def calculate_information_gain(data, attribute, target_col):
-  """
-  Calculates the information gain of an attribute.
-
-  Args:
-    data: The dataset as a pandas DataFrame.
-    attribute: The name of the attribute.
-    target_col: The name of the target column.
-
-  Returns:
-    The information gain of the attribute.
-  """
-
   # Calculate the entropy of the entire dataset
   total_entropy = calculate_entropy(data, target_col)
 
@@ -55,17 +32,6 @@ def calculate_information_gain(data, attribute, target_col):
   return information_gain
 
 def build_tree(data, attributes, target_col):
-  """
-  Recursively builds a decision tree.
-
-  Args:
-    data: The dataset as a pandas DataFrame.
-    attributes: A list of attributes to consider.
-    target_col: The name of the target column.
-
-  Returns:
-    The root node of the decision tree.
-  """
 
   # Base case: If all data points belong to the same class, return a leaf node
   if len(data[target_col].unique()) == 1:
@@ -92,16 +58,6 @@ def build_tree(data, attributes, target_col):
   return tree
 
 def predict(tree, data_point):
-  """
-  Predicts the class for a given data point.
-
-  Args:
-    tree: The decision tree.
-    data_point: A dictionary containing the attribute-value pairs of the data point.
-
-  Returns:
-    The predicted class.
-  """
 
   current_node = tree
 
@@ -114,15 +70,6 @@ def predict(tree, data_point):
 
 
 def generate_weather_dataset(num_samples):
-  """
-  Generates a random dataset for weather prediction.
-
-  Args:
-    num_samples: Number of samples in the dataset.
-
-  Returns:
-    A pandas DataFrame containing the generated dataset.
-  """
 
   weather_conditions = ["Sunny", "Overcast", "Rainy"]
   temperatures = ["Hot", "Mild", "Cool"]
@@ -141,17 +88,6 @@ def generate_weather_dataset(num_samples):
   return data
 
 def test_tree(tree, test_data, target_col):
-  """
-  Tests the decision tree on a test dataset.
-
-  Args:
-    tree: The decision tree.
-    test_data: The test dataset as a pandas DataFrame.
-    target_col: The name of the target column.
-
-  Returns:
-    The accuracy of the predictions.
-  """
 
   correct_predictions = 0
   total_predictions = len(test_data)
@@ -198,6 +134,3 @@ train_data, test_data = train_test_split(weather_data, test_size=0.2, random_sta
 # Test the tree on the test dataset
 accuracy = test_tree(tree, test_data, target_col)
 print("Accuracy:", accuracy)
-
-# Example usage:
-
