@@ -65,3 +65,50 @@ CREATE TABLE DWStudent2 (
     Grade VARCHAR(50),
     Program VARCHAR(50)
 );
+
+Task 4
+
+1.
+CREATE TABLE Student3 (
+    StudentID INT PRIMARY KEY,
+    SName VARCHAR(100),
+	Degree VARCHAR(100)
+);
+
+2.
+INSERT INTO Student3 (StudentID, SName, Degree)
+VALUES
+    ('S4', 'Waheed Iqbal', 'PhD'),
+    ('S5', 'Adnan Abid', NULL),
+    ('S6', 'Kamran Malik', NULL);
+	
+3.
+CREATE TABLE DWStudent3 (
+    Student_ID INT PRIMARY KEY,
+    StudentName VARCHAR(100)
+);
+
+Task 5
+
+1.
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    OrderDate DATE,
+    OrderQuantity INT
+);
+
+2.
+INSERT INTO Orders (OrderID, OrderDate, OrderQuantity)
+VALUES
+('01', '2024-01-15', 5),
+('02', '2024-03-22', 3),
+('03', '2023-11-10', 8),
+('04', '2023-07-25', 2),
+('05', '2023-06-14', 10),
+('06', '2023-09-30', 4);
+
+3.
+CREATE TABLE DWOrder (
+    Year INT,
+    QuantityOfOrders INT
+);
