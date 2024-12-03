@@ -17,18 +17,6 @@ def calculate_entropy(data, target_col):
     return entropy
 
 def calculate_information_gain(data, attribute, target_col):
-    """
-    Calculates the information gain for a given attribute in the dataset.
-
-    Args:
-        data: The dataset as a list of lists.
-        attribute: The index of the attribute to calculate information gain for.
-        target_col: The index of the target column.
-
-    Returns:
-        The information gain of the attribute.
-    """
-
     # Calculate the entropy of the entire dataset
     parent_entropy = calculate_entropy(data, target_col)
 
@@ -48,20 +36,6 @@ def calculate_information_gain(data, attribute, target_col):
     return information_gain
 
 def build_tree(data, attributes, target_col, depth=0, max_depth=3):
-    """
-    Recursively builds a decision tree using entropy and information gain.
-
-    Args:
-        data: The dataset as a list of lists.
-        attributes: A list of attribute indices to consider.
-        target_col: The index of the target column.
-        depth: The current depth of the tree.
-        max_depth: The maximum depth of the tree.
-
-    Returns:
-        A decision tree as a nested dictionary.
-    """
-
     # Base cases:
     # 1. If all labels are the same, return that label
     if len(set(row[target_col] for row in data)) == 1:
@@ -90,17 +64,6 @@ def build_tree(data, attributes, target_col, depth=0, max_depth=3):
     return tree
 
 def predict(tree, data_point):
-    """
-    Traverses the tree to predict the class for a given data point.
-
-    Args:
-        tree: The decision tree.
-        data_point: A list representing the data point.
-
-    Returns:
-        The predicted class.
-    """
-
     current_node = tree
     while isinstance(current_node, dict):
         attribute = list(current_node.keys())[0]
@@ -113,19 +76,6 @@ def predict(tree, data_point):
     return current_node
 
 def build_random_forest(data, attributes, target_col, n_trees=2):
-    """
-    Builds a Random Forest by generating multiple decision trees.
-
-    Args:
-        data: The dataset as a list of lists.
-        attributes: A list of attribute indices to consider.
-        target_col: The index of the target column.
-        n_trees: The number of trees in the forest.
-
-    Returns:
-        A list of decision trees.
-    """
-
     forest = []
     for _ in range(n_trees):
         # Sample a subset of the data
