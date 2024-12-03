@@ -78,9 +78,9 @@ CREATE TABLE Student3 (
 2.
 INSERT INTO Student3 (StudentID, SName, Degree)
 VALUES
-    ('S4', 'Waheed Iqbal', 'PhD'),
-    ('S5', 'Adnan Abid', NULL),
-    ('S6', 'Kamran Malik', NULL);
+    ('4', 'Waheed Iqbal', 'PhD'),
+    ('5', 'Adnan Abid', NULL),
+    ('6', 'Kamran Malik', NULL);
 	
 3.
 CREATE TABLE DWStudent3 (
