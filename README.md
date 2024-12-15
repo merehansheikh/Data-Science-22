@@ -22,6 +22,6 @@
 
 #### Mathematics
 15. [1st-year-Math-full-Book-PTB]
-16. [2nd-year-Math-full-Book-PTB]
+16. [2nd-year-Math-full-Book-PTB](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-2/Math%20Deficiency%20-%20II/2nd-year-Math-full-Book-PB.pdf)
 17. [Calculus Early Transcendentals by Howard Anton, Irl Bivens, Stephen Devis - 10th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-3/Calculus%20and%20Analytical%20Geometry/Calculus%20Early%20Transcendentals%20-%20Anton%20-%20Bivens%20-%20Devis%20-%2010th%20Edition.pdf)
 18. [SOLUTION - Calculus Early Transcendentals by Howard Anton, Irl Bivens, Stephen Devis - 10th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-3/Calculus%20and%20Analytical%20Geometry/SOLUTION%20-%20Calculus%20Early%20Transcendentals%20-%20Anton%20-%20Bivens%20-%20Devis%20-%2010th%20Edition.pdf)
