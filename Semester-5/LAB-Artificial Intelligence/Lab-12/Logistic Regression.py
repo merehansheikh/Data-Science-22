@@ -139,3 +139,4 @@ plt.xlabel('Feature 1 (X1)')
 plt.ylabel('Feature 2 (X2)')
 plt.title('Decision Boundary')
 plt.show()
+
