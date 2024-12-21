@@ -1,0 +1,187 @@
+
+### 1. **Product Dimension Table** (30 rows)
+
+```sql
+INSERT INTO Product_Dimension (Product_ID, Product_Name, Category, Collection, Price)
+VALUES
+(1, 'T-Shirt', 'Clothing', 'Spring 2024', 19.99),
+(2, 'Jeans', 'Clothing', 'Summer 2024', 49.99),
+(3, 'Sweater', 'Clothing', 'Fall 2024', 39.99),
+(4, 'Coat', 'Clothing', 'Winter 2024', 79.99),
+(5, 'Dress', 'Clothing', 'Spring 2024', 59.99),
+(6, 'Jacket', 'Clothing', 'Summer 2024', 69.99),
+(7, 'Scarf', 'Accessories', 'Fall 2024', 29.99),
+(8, 'Shoes', 'Footwear', 'Winter 2024', 89.99),
+(9, 'Skirt', 'Clothing', 'Spring 2024', 39.99),
+(10, 'Shorts', 'Clothing', 'Summer 2024', 24.99),
+(11, 'Blouse', 'Clothing', 'Fall 2024', 34.99),
+(12, 'Boots', 'Footwear', 'Winter 2024', 99.99),
+(13, 'Hat', 'Accessories', 'Spring 2024', 19.99),
+(14, 'Gloves', 'Accessories', 'Fall 2024', 14.99),
+(15, 'Sweatshirt', 'Clothing', 'Summer 2024', 39.99),
+(16, 'Belt', 'Accessories', 'Winter 2024', 24.99),
+(17, 'Chinos', 'Clothing', 'Fall 2024', 44.99),
+(18, 'Raincoat', 'Clothing', 'Spring 2024', 59.99),
+(19, 'Cardigan', 'Clothing', 'Summer 2024', 49.99),
+(20, 'Camisole', 'Clothing', 'Winter 2024', 19.99),
+(21, 'Tracksuit', 'Clothing', 'Spring 2024', 79.99),
+(22, 'Sunglasses', 'Accessories', 'Summer 2024', 29.99),
+(23, 'Watch', 'Accessories', 'Fall 2024', 129.99),
+(24, 'Tie', 'Accessories', 'Winter 2024', 19.99),
+(25, 'Sweatpants', 'Clothing', 'Spring 2024', 34.99),
+(26, 'Polo Shirt', 'Clothing', 'Summer 2024', 39.99),
+(27, 'Turtleneck', 'Clothing', 'Fall 2024', 49.99),
+(28, 'Mittens', 'Accessories', 'Winter 2024', 14.99),
+(29, 'Flip Flops', 'Footwear', 'Spring 2024', 19.99),
+(30, 'Sandals', 'Footwear', 'Summer 2024', 34.99);
+```
+
+### 2. **Store Dimension Table** (30 rows)
+
+```sql
+INSERT INTO Store_Dimension (Store_ID, Store_Name, Location, Region)
+VALUES
+(1, 'Downtown Store', 'New York', 'Northeast'),
+(2, 'Mall Store', 'Los Angeles', 'West Coast'),
+(3, 'City Center Store', 'Chicago', 'Midwest'),
+(4, 'Online Store', 'N/A', 'National'),
+(5, 'Eastside Store', 'Boston', 'Northeast'),
+(6, 'Westfield Store', 'San Francisco', 'West Coast'),
+(7, 'Central Plaza Store', 'Seattle', 'West Coast'),
+(8, 'Harbor Store', 'Miami', 'Southeast'),
+(9, 'Park Avenue Store', 'Dallas', 'Southwest'),
+(10, 'Riverside Store', 'Houston', 'Southwest'),
+(11, 'Downtown Mall Store', 'Las Vegas', 'West Coast'),
+(12, 'Lakeview Store', 'Detroit', 'Midwest'),
+(13, 'Mountainview Store', 'Denver', 'Rocky Mountains'),
+(14, 'Sunset Store', 'Los Angeles', 'West Coast'),
+(15, 'Northern Lights Store', 'Chicago', 'Midwest'),
+(16, 'Plaza Center Store', 'New York', 'Northeast'),
+(17, 'Silver Springs Store', 'Washington D.C.', 'Southeast'),
+(18, 'Lakeshore Store', 'Austin', 'Southwest'),
+(19, 'Sunrise Store', 'Phoenix', 'Southwest'),
+(20, 'Ocean Breeze Store', 'San Diego', 'West Coast'),
+(21, 'East Valley Store', 'San Jose', 'West Coast'),
+(22, 'Westwood Store', 'Los Angeles', 'West Coast'),
+(23, 'Riverbend Store', 'Chicago', 'Midwest'),
+(24, 'Pinecrest Store', 'Miami', 'Southeast'),
+(25, 'Broadway Store', 'New York', 'Northeast'),
+(26, 'Golden Gate Store', 'San Francisco', 'West Coast'),
+(27, 'Capital View Store', 'Washington D.C.', 'Southeast'),
+(28, 'Forest Hills Store', 'Seattle', 'West Coast'),
+(29, 'City Square Store', 'Dallas', 'Southwest'),
+(30, 'Beachside Store', 'Miami', 'Southeast');
+```
+
+### 3. **Customer Dimension Table** (30 rows)
+
+```sql
+INSERT INTO Customer_Dimension (Customer_ID, Customer_Name, Email, Loyalty_Tier, Join_Date)
+VALUES
+(1, 'Alice Johnson', 'alice@example.com', 'Gold', '2022-06-15'),
+(2, 'Bob Smith', 'bob@example.com', 'Silver', '2023-01-10'),
+(3, 'Charlie Brown', 'charlie@example.com', 'Platinum', '2021-09-23'),
+(4, 'Dana White', 'dana@example.com', 'Bronze', '2023-08-30'),
+(5, 'Eve Adams', 'eve@example.com', 'Silver', '2022-03-11'),
+(6, 'Frank Green', 'frank@example.com', 'Gold', '2021-05-17'),
+(7, 'Grace Lee', 'grace@example.com', 'Platinum', '2022-07-12'),
+(8, 'Henry Scott', 'henry@example.com', 'Bronze', '2023-10-01'),
+(9, 'Ivy Taylor', 'ivy@example.com', 'Gold', '2022-08-05'),
+(10, 'Jack Walker', 'jack@example.com', 'Silver', '2023-05-14'),
+(11, 'Kylie King', 'kylie@example.com', 'Platinum', '2021-11-25'),
+(12, 'Liam Evans', 'liam@example.com', 'Bronze', '2023-04-17'),
+(13, 'Mona Clark', 'mona@example.com', 'Silver', '2022-01-22'),
+(14, 'Noah Harris', 'noah@example.com', 'Gold', '2022-12-03'),
+(15, 'Olivia Mitchell', 'olivia@example.com', 'Platinum', '2021-10-30'),
+(16, 'Paul Lewis', 'paul@example.com', 'Bronze', '2023-07-06'),
+(17, 'Quincy Allen', 'quincy@example.com', 'Gold', '2022-02-13'),
+(18, 'Rachel Young', 'rachel@example.com', 'Silver', '2023-11-10'),
+(19, 'Sam Gonzalez', 'sam@example.com', 'Platinum', '2021-06-19'),
+(20, 'Tina Roberts', 'tina@example.com', 'Bronze', '2023-09-28'),
+(21, 'Ursula Carter', 'ursula@example.com', 'Gold', '2022-05-02'),
+(22, 'Vince Phillips', 'vince@example.com', 'Silver', '2022-09-10'),
+(23, 'Willis Carter', 'willis@example.com', 'Platinum', '2021-12-07'),
+(24, 'Xena Brooks', 'xena@example.com', 'Bronze', '2023-03-21'),
+(25, 'Yara Turner', 'yara@example.com', 'Gold', '2022-04-08'),
+(26, 'Zane Martin', 'zane@example.com', 'Silver', '2022-06-14'),
+(27, 'Amy Wilson', 'amy@example.com', 'Platinum', '2021-08-11'),
+(28, 'Bradley King', 'bradley@example.com', 'Bronze', '2023-02-17'),
+(29, 'Cora Davis', 'cora@example.com', 'Gold', '2022-10-15'),
+(30, 'David Moore', 'david@example.com', 'Silver', '2023-01-25');
+```
+
+### 4. **Date Dimension Table** (30 rows)
+
+```sql
+INSERT INTO Date_Dimension (Date_ID, Date, Day, Month, Year, Quarter)
+VALUES
+(1, '2024-03-01', 'Friday', 'March', 2024, 1),
+(2, '2024-03-02', 'Saturday', 'March', 2024, 1),
+(3, '2024-03-03', 'Sunday', 'March', 2024, 1),
+(4, '2024-03-04', 'Monday', 'March', 2024, 1),
+(5, '2024-03-05', 'Tuesday', 'March', 2024, 1),
+(6, '2024-03-06', 'Wednesday', 'March', 2024, 1),
+(7, '2024-03-07', 'Thursday', 'March', 2024, 1),
+(8, '2024-03-08', 'Friday', 'March', 2024, 1),
+(9, '2024-03-09', 'Saturday', 'March', 2024, 1),
+(10, '2024-03-10', 'Sunday', 'March', 2024, 1),
+(11, '2024-06-01', 'Saturday', 'June', 2024, 2),
+(12, '2024-06-02', 'Sunday', 'June', 2024, 2),
+(13, '2024-06-03', 'Monday', 'June', 2024, 2),
+(14, '2024-06-04', 'Tuesday', 'June', 2024, 2),
+(15, '2024-06-05', 'Wednesday', 'June', 2024, 2),
+(16, '2024-06-06', 'Thursday', 'June', 2024, 2),
+(17, '2024-06-07', 'Friday', 'June', 2024, 2),
+(18, '2024-06-08', 'Saturday', 'June', 2024, 2),
+(19, '2024-06-09', 'Sunday', 'June', 2024, 2),
+(20, '2024-09-01', 'Sunday', 'September', 2024, 3),
+(21, '2024-09-02', 'Monday', 'September', 2024, 3),
+(22, '2024-09-03', 'Tuesday', 'September', 2024, 3),
+(23, '2024-09-04', 'Wednesday', 'September', 2024, 3),
+(24, '2024-09-05', 'Thursday', 'September', 2024, 3),
+(25, '2024-09-06', 'Friday', 'September', 2024, 3),
+(26, '2024-09-07', 'Saturday', 'September', 2024, 3),
+
+
+(27, '2024-09-08', 'Sunday', 'September', 2024, 3),
+(28, '2024-09-09', 'Monday', 'September', 2024, 3),
+(29, '2024-12-01', 'Sunday', 'December', 2024, 4),
+(30, '2024-12-02', 'Monday', 'December', 2024, 4);
+```
+
+### 5. **Sales Fact Table** (30 rows)
+
+```sql
+INSERT INTO Sales_Fact (Sale_ID, Date_ID, Product_ID, Store_ID, Customer_ID, Quantity_Sold, Total_Sales)
+VALUES
+(1, 1, 1, 1, 1, 2, 39.98),
+(2, 2, 2, 2, 2, 1, 49.99),
+(3, 3, 3, 3, 3, 3, 119.97),
+(4, 4, 4, 4, 4, 2, 159.98),
+(5, 5, 5, 5, 5, 1, 59.99),
+(6, 6, 6, 6, 6, 2, 139.98),
+(7, 7, 7, 7, 7, 5, 149.95),
+(8, 8, 8, 8, 8, 3, 269.97),
+(9, 9, 9, 9, 9, 4, 159.96),
+(10, 10, 10, 10, 10, 1, 24.99),
+(11, 11, 11, 11, 11, 3, 104.97),
+(12, 12, 12, 12, 12, 2, 69.98),
+(13, 13, 13, 13, 13, 1, 19.99),
+(14, 14, 14, 14, 14, 4, 99.96),
+(15, 15, 15, 15, 15, 5, 199.95),
+(16, 16, 16, 16, 16, 2, 49.98),
+(17, 17, 17, 17, 17, 1, 44.99),
+(18, 18, 18, 18, 18, 1, 59.99),
+(19, 19, 19, 19, 19, 3, 149.97),
+(20, 20, 20, 20, 20, 2, 69.98),
+(21, 21, 21, 21, 21, 3, 239.97),
+(22, 22, 22, 22, 22, 5, 149.95),
+(23, 23, 23, 23, 23, 1, 19.99),
+(24, 24, 24, 24, 24, 4, 99.96),
+(25, 25, 25, 25, 25, 3, 104.97),
+(26, 26, 26, 26, 26, 1, 39.99),
+(27, 27, 27, 27, 27, 2, 99.98),
+(28, 28, 28, 28, 28, 4, 59.96),
+(29, 29, 29, 29, 29, 2, 69.98),
+(30, 30, 30, 30, 30, 1, 34.99);
+```

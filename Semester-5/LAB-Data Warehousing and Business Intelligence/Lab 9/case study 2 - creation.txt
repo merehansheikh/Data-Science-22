@@ -1,0 +1,52 @@
+SQL Queries for Data Warehouse Creation:
+1. Create Fact Table:
+CREATE TABLE Sales_Fact (
+    Sales_ID INT PRIMARY KEY,
+    Product_ID INT,
+    Store_ID INT,
+    Customer_ID INT,
+    Date_ID INT,
+    Quantity_Sold INT,
+    Revenue DECIMAL(10, 2),
+    Discount_Applied DECIMAL(10, 2),
+    FOREIGN KEY (Product_ID) REFERENCES Product_Dimension(Product_ID),
+    FOREIGN KEY (Store_ID) REFERENCES Store_Dimension(Store_ID),
+    FOREIGN KEY (Customer_ID) REFERENCES Customer_Dimension(Customer_ID),
+    FOREIGN KEY (Date_ID) REFERENCES Date_Dimension(Date_ID)
+);
+
+2. Create Product Dimension Table:
+CREATE TABLE Product_Dimension (
+    Product_ID INT PRIMARY KEY,
+    Product_Name VARCHAR(255),
+    Category VARCHAR(100),
+    Collection VARCHAR(100),
+    Price DECIMAL(10, 2)
+);
+
+3. Create Store Dimension Table:
+CREATE TABLE Store_Dimension (
+    Store_ID INT PRIMARY KEY,
+    Store_Name VARCHAR(255),
+    Location VARCHAR(255),
+    Region VARCHAR(100)
+);
+
+4. Create Customer Dimension Table:
+CREATE TABLE Customer_Dimension (
+    Customer_ID INT PRIMARY KEY,
+    Customer_Name VARCHAR(255),
+    Email VARCHAR(255),
+    Loyalty_Tier VARCHAR(50),
+    Join_Date DATE
+);
+
+5. Create Date Dimension Table:
+CREATE TABLE Date_Dimension (
+    Date_ID INT PRIMARY KEY,
+    Date DATE,
+    Day VARCHAR(10),
+    Month VARCHAR(20),
+    Year INT,
+    Quarter INT
+);
