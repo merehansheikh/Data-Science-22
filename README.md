@@ -25,3 +25,8 @@
 16. [2nd-year-Math-full-Book-PTB](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-2/Math%20Deficiency%20-%20II/2nd-year-Math-full-Book-PB.pdf)
 17. [Calculus Early Transcendentals by Howard Anton, Irl Bivens, Stephen Devis - 10th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-3/Calculus%20and%20Analytical%20Geometry/Calculus%20Early%20Transcendentals%20-%20Anton%20-%20Bivens%20-%20Devis%20-%2010th%20Edition.pdf)
 18. [SOLUTION - Calculus Early Transcendentals by Howard Anton, Irl Bivens, Stephen Devis - 10th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-3/Calculus%20and%20Analytical%20Geometry/SOLUTION%20-%20Calculus%20Early%20Transcendentals%20-%20Anton%20-%20Bivens%20-%20Devis%20-%2010th%20Edition.pdf)
+
+#### Artificial Intelligence / Machine Learning (AI/ML)
+19. [Artificial Intelligence - Structures and Strategies for Complex Problem Solving by George F. Luger - 6th Edition](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-5/Artificial%20Intelligence/Books/Artificial%20Intelligence%20-%20George%20F.%20Luger%20-%206th%20Edition.pdf)
+20. [Artificial Intelligence Illuminated by Ben Coppin](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-5/Artificial%20Intelligence/Books/Artificial%20Intelligence%20Illuminated%20-%20Ben%20Coppin.pdf)
+21. [Machine Learning by Tom M. Mitchell](https://github.com/merehansheikh/Data-Science-22/blob/main/Semester-5/Artificial%20Intelligence/Books/Machine%20Learning%20-%20Tom%20M.%20Mitchell.pdf)
