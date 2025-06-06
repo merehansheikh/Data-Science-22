@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensemble Machine Learning Models: Handout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #374151; /* Dark gray text */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+        }
+        h1, h2, h3 {
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* Darker gray for headings */
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.25rem; /* text-4xl */
+            text-align: center;
+            border-bottom: 2px solid #e5e7eb; /* border-b-2 border-gray-200 */
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 1.875rem; /* text-3xl */
+            margin-top: 2.5rem; /* mt-10 */
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.5rem; /* text-2xl */
+            margin-top: 1.5rem; /* mt-6 */
+            margin-bottom: 0.75rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        pre {
+            background-color: #1f2937; /* bg-gray-800 */
+            color: #f9fafb; /* text-gray-50 */
+            padding: 1.25rem; /* p-5 */
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow-x: auto;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.4;
+        }
+        code {
+            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace; /* Preferred coding font */
+        }
+        /* Basic syntax highlighting for Python-like code */
+        .token.keyword { color: #8be9fd; } /* Light blue */
+        .token.string { color: #f1fa8c; } /* Yellow */
+        .token.comment { color: #6272a4; } /* Grayish blue */
+        .token.function { color: #50fa7b; } /* Green */
+        .token.class-name { color: #ff79c6; } /* Pink */
+        .token.number { color: #bd93f9; } /* Purple */
+        .token.operator { color: #ffb86c; } /* Orange */
+        .token.punctuation { color: #f8f8f2; } /* White */
+        .token.property { color: #bd93f9; } /* Purple */
+        .token.selector { color: #ff79c6; } /* Pink */
+        .token.variable { color: #f8f8f2; } /* White */
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        th, td {
+            border: 1px solid #d1d5db; /* border-gray-300 */
+            padding: 0.75rem; /* p-3 */
+            text-align: left;
+        }
+        th {
+            background-color: #e5e7eb; /* bg-gray-200 */
+            font-weight: 600; /* font-semibold */
+            color: #374151;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb; /* bg-gray-50 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ensemble Machine Learning Models: Bagging, Boosting, and Stacking</h1>
+        <p>This handout provides a concise overview and Python code examples for three fundamental ensemble machine learning techniques: <strong>Bagging</strong>, <strong>Boosting</strong>, and <strong>Stacking</strong>. We'll use <code>scikit-learn</code> for practical implementation.</p>
+
+        <h2>1. Setting Up: Data and Base Estimator</h2>
+        <p>First, let's prepare our environment and a synthetic dataset. We'll also establish a baseline performance with a single Decision Tree.</p>
+        <pre><code class="language-python">
+import numpy as np
+import pandas as pd
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier, BaggingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import StackingClassifier
+
+# Generate a synthetic dataset
+X, y = make_classification(n_samples=1000, n_features=20, n_informative=10, n_redundant=5, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+print("Dataset shape:", X.shape)
+print("Training data shape:", X_train.shape)
+print("Testing data shape:", X_test.shape)
+
+# Define a base estimator (Decision Tree) for comparison
+base_estimator = DecisionTreeClassifier(max_depth=5, random_state=42)
+base_estimator.fit(X_train, y_train)
+y_pred_base = base_estimator.predict(X_test)
+print(f"\nAccuracy of Base Estimator (Decision Tree): {accuracy_score(y_test, y_pred_base):.4f}")
+        </code></pre>
+
+        <h2>2. Bagging (Bootstrap Aggregating)</h2>
+        <h3>Concept</h3>
+        <p><strong>Bagging</strong> trains multiple base models <strong>independently</strong> on different random subsets (with replacement, called <strong>bootstrapping</strong>) of the training data. The final prediction is an aggregation (e.g., averaging for regression, majority voting for classification) of the individual model predictions. This technique primarily aims to <strong>reduce variance</strong> and prevent overfitting.</p>
+        <h3>Code Example (Random Forest)</h3>
+        <p><strong>Random Forest</strong> is a popular bagging algorithm that uses Decision Trees as base estimators and adds further randomness by considering only a subset of features at each split.</p>
+        <pre><code class="language-python">
+print("\n--- Bagging Example (Random Forest) ---")
+bagging_model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42, n_jobs=-1)
+bagging_model.fit(X_train, y_train)
+y_pred_bagging = bagging_model.predict(X_test)
+print(f"Accuracy of Bagging (Random Forest): {accuracy_score(y_test, y_pred_bagging):.4f}")
+
+# General BaggingClassifier for other base estimators
+bagging_dt_model = BaggingClassifier(
+    estimator=DecisionTreeClassifier(max_depth=5, random_state=42),
+    n_estimators=100,
+    random_state=42,
+    n_jobs=-1
+)
+bagging_dt_model.fit(X_train, y_train)
+y_pred_bagging_dt = bagging_dt_model.predict(X_test)
+print(f"Accuracy of Bagging (Decision Tree base): {accuracy_score(y_test, y_pred_bagging_dt):.4f}")
+        </code></pre>
+
+        <h2>3. Boosting</h2>
+        <h3>Concept</h3>
+        <p><strong>Boosting</strong> trains models <strong>sequentially</strong>. Each new model focuses on correcting the errors made by the previous models. It iteratively adjusts the weights of misclassified samples or fits new models to the residuals. This technique primarily aims to <strong>reduce bias</strong> and convert "weak learners" into "strong learners."</p>
+        <h3>Code Example (Gradient Boosting & AdaBoost)</h3>
+        <pre><code class="language-python">
+print("\n--- Boosting Example ---")
+
+# a) Gradient Boosting
+# Builds an additive model by fitting new trees to the residuals (errors) of previous trees.
+gradient_boosting_model = GradientBoostingClassifier(n_estimators=100, max_depth=3, learning_rate=0.1, random_state=42)
+gradient_boosting_model.fit(X_train, y_train)
+y_pred_gb = gradient_boosting_model.predict(X_test)
+print(f"Accuracy of Boosting (Gradient Boosting): {accuracy_score(y_test, y_pred_gb):.4f}")
+
+# b) AdaBoost (Adaptive Boosting)
+# Focuses on misclassified samples by assigning higher weights to them.
+adaboost_model = AdaBoostClassifier(estimator=DecisionTreeClassifier(max_depth=1), n_estimators=100, learning_rate=1.0, random_state=42)
+adaboost_model.fit(X_train, y_train)
+y_pred_ada = adaboost_model.predict(X_test)
+print(f"Accuracy of Boosting (AdaBoost): {accuracy_score(y_test, y_pred_ada):.4f}")
+        </code></pre>
+
+        <h2>4. Stacking</h2>
+        <h3>Concept</h3>
+        <p><strong>Stacking</strong> (Stacked Generalization) is a multi-level ensemble.
+        <ul>
+            <li><strong>Level 0 (Base Models):</strong> Several <strong>diverse</strong> models (e.g., Logistic Regression, Decision Tree, SVM, KNN) are trained on the original training data.</li>
+            <li><strong>Level 1 (Meta-Model/Blender):</strong> The predictions of the base models (typically out-of-fold predictions to prevent data leakage) become the input features for a new model, called the <strong>meta-model</strong>. The meta-model learns to combine the predictions of the base models optimally. Stacking aims to reduce both bias and variance by leveraging the strengths of diverse models.</li>
+        </ul></p>
+        <h3>Code Example</h3>
+        <pre><code class="language-python">
+print("\n--- Stacking Example ---")
+
+# Define diverse base models (level-0 models)
+estimators = [
+    ('lr', LogisticRegression(solver='liblinear', random_state=42)),
+    ('dt', DecisionTreeClassifier(max_depth=5, random_state=42)),
+    ('knn', KNeighborsClassifier(n_neighbors=5)),
+    ('svc', SVC(probability=True, random_state=42)) # SVC needs probability=True for predict_proba
+]
+
+# Define the meta-model (level-1 model)
+meta_model = LogisticRegression(solver='liblinear', random_state=42)
+
+stacking_model = StackingClassifier(
+    estimators=estimators,
+    final_estimator=meta_model,
+    cv=5, # Cross-validation folds for generating meta-features
+    n_jobs=-1,
+    passthrough=True # Meta-model also receives original features
+)
+
+stacking_model.fit(X_train, y_train)
+y_pred_stacking = stacking_model.predict(X_test)
+print(f"Accuracy of Stacking: {accuracy_score(y_test, y_pred_stacking):.4f}")
+        </code></pre>
+
+        <h2>Differentiating Factors: Bagging vs. Boosting vs. Stacking</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature/Concept</th>
+                    <th>Bagging</th>
+                    <th>Boosting</th>
+                    <th>Stacking</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Training Flow</strong></td>
+                    <td>Parallel/Independent</td>
+                    <td>Sequential</td>
+                    <td>Two-stage (Base models parallel, Meta-model sequential)</td>
+                </tr>
+                <tr>
+                    <td><strong>Error Handling</strong></td>
+                    <td>Reduces variance by averaging/majority voting</td>
+                    <td>Focuses on correcting errors of previous models</td>
+                    <td>Learns optimal combination to leverage strengths and reduce errors</td>
+                </tr>
+                <tr>
+                    <td><strong>Base Model Diversity</strong></td>
+                    <td>Usually <strong>homogeneous</strong> (same type)</td>
+                    <td>Usually <strong>homogeneous</strong> (same type, often weak)</td>
+                    <td><strong>Heterogeneous</strong> (diverse types)</td>
+                </tr>
+                <tr>
+                    <td><strong>Combination Method</strong></td>
+                    <td>Simple aggregation (averaging/voting)</td>
+                    <td>Weighted averaging (weights learned iteratively)</td>
+                    <td>A separate <strong>meta-model</strong> learns the optimal combination</td>
+                </tr>
+                <tr>
+                    <td><strong>Primary Goal</strong></td>
+                    <td>Reduce <strong>Variance</strong></td>
+                    <td>Reduce <strong>Bias</strong></td>
+                    <td>Improve overall predictive power by combining diverse perspectives</td>
+                </tr>
+                <tr>
+                    <td><strong>Example</strong></td>
+                    <td>Random Forest</td>
+                    <td>Gradient Boosting, AdaBoost, XGBoost, LightGBM</td>
+                    <td>Stacking Classifier/Regressor</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="mt-8 text-center text-gray-600 text-sm">
+            This handout covers the core concepts and practical implementations of Bagging, Boosting, and Stacking. Choosing the right ensemble method depends on your specific problem, data characteristics, and desired trade-off between bias and variance.
+        </p>
+    </div>
+</body>
+</html>
