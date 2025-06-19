@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+    <servlet>
+        <servlet-name>ShowRollInfo</servlet-name>
+        <servlet-class>ShowRollInfo</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ShowRollInfo</servlet-name>
+        <url-pattern>/ShowRollInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Message</servlet-name>
+        <servlet-class>Message</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Message</servlet-name>
+        <url-pattern>/Message</url-pattern>
+    </servlet-mapping>
+	 <servlet>
+        <servlet-name>StudentInfo</servlet-name>
+        <servlet-class>StudentInfo</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StudentInfo</servlet-name>
+        <url-pattern>/StudentInfo</url-pattern>
+    </servlet-mapping>
+
+</web-app>

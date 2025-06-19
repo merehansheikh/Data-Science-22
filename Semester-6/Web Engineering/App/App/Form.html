@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript">
+function validateForm() {
+    if (document.myForm.firstName.value === "") {
+        alert("Please enter First Name!");
+        document.myForm.firstName.focus();
+        return false;
+    }
+    if (document.myForm.lastName.value === "") {
+        alert("Please enter Last Name!");
+        document.myForm.lastName.focus();
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body bgcolor="#ADD8E6">
+<center>
+<form name="myForm" action="StudentInfo" method="post" onsubmit="return validateForm();">
+<h2>Student Search Form</h2>
+First Name: <input type="text" name="firstName"><br><br>
+Last Name: <input type="text" name="lastName"><br><br>
+<input type="submit" value="Search">
+</form>
+</center>
+</body>
+</html>
